@@ -2,10 +2,11 @@ version: '3'
 services:
     myapp:
         container_name: keras
-        image: python:3.6
+        build:
+            context: .
         volumes:
             - ./:/usr/app
         ports:
-            - "24375:80"
+            - "24375:8888"
         working_dir: /usr/app
         tty: true
